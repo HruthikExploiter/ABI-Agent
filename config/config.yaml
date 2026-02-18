@@ -1,0 +1,30 @@
+llm:
+  provider: "groq"
+  models:
+    google:
+      primary: "gemini-2.0-flash"
+      fallback: "gemini-1.5-flash"
+    groq:
+      primary: "llama-3.3-70b-versatile"
+      fallback: "llama-3.1-8b-instant"
+  temperature: 0.0
+  max_tokens: 4096
+  max_retries: 3
+
+agent:
+  max_iterations: 10
+  self_heal_retries: 3
+  enable_sql_generation: true
+  enable_visualization: true
+  verbose: true
+
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+  lazy_scan: true
+  infer_schema_length: 1000
+
+streamlit:
+  page_title: "ABI Agent — Supply Chain Intelligence"
+  page_icon: "📦"
+  layout: "wide"
