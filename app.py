@@ -79,7 +79,6 @@ with st.sidebar:
         "Products with highest lead time?",
         "SQL for all delayed orders",
         "Total inventory value by warehouse",
-        "Monthly revenue trend as line chart",
     ]
     for ex in examples:
         if st.button(ex, use_container_width=True):
