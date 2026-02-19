@@ -105,7 +105,7 @@ abi-agent/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/abi-agent.git
+git clone https://github.com/HruthikExploiter/abi-agent.git
 cd abi-agent
 ```
 
