@@ -339,6 +339,31 @@ _VIZ_SYSTEM_PROMPT = textwrap.dedent("""
     6. Always add a clear title and axis labels.
     7. Do NOT import anything.
 
+    CORRECT EXAMPLES:
+
+    Bar chart:
+    fig = px.bar(
+        df.to_pandas(),
+        x="category",
+        y="revenue",
+        title="Revenue by Category",
+        template="plotly_dark",
+    )
+
+    Line chart:
+    fig = px.line(
+        df.to_pandas(),
+        x="order_date",
+        y="total_revenue",
+        title="Revenue Over Time",
+        template="plotly_dark",
+    )
+
+    IMPORTANT:
+    - Always call df.to_pandas() before passing to plotly
+    - Use px (plotly.express) not go for simple charts
+    - Column names must exactly match the DataFrame columns shown
+
     Output format:
     <thinking>reasoning</thinking>
     <plan>chart plan</plan>
