@@ -104,21 +104,27 @@ st.markdown("# 📦 Autonomous business intelligence agent")
 st.markdown("#### Supply Chain Intelligence Platform")
 
 # Show chat history
-for msg in st.session_state.chat_history:
+for i, msg in enumerate(st.session_state.chat_history):
     with st.chat_message(msg["role"]):
         st.write(msg["content"])
         if msg.get("figure"):
-            st.plotly_chart(msg["figure"], use_container_width=True)
+            st.plotly_chart(
+                msg["figure"],
+                use_container_width=True,
+                key=f"fig_{i}",
+            )
         if msg.get("df") is not None:
-            with st.expander("View Data"):
+            with st.expander("View Data", expanded=False):
                 st.dataframe(
-                    msg["df"].to_pandas(), use_container_width=True
+                    msg["df"].to_pandas(),
+                    use_container_width=True,
+                    key=f"df_{i}",
                 )
         if msg.get("code"):
-            with st.expander("Generated Polars Code"):
+            with st.expander("Generated Polars Code", expanded=False):
                 st.code(msg["code"], language="python")
         if msg.get("sql"):
-            with st.expander("Generated SQL"):
+            with st.expander("Generated SQL", expanded=False):
                 st.code(msg["sql"], language="sql")
 
 # ── Chat Input ────────────────────────────────────────────────────────────────
