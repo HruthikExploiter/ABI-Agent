@@ -2,8 +2,6 @@
 
 An AI-powered agent that takes a messy supply chain dataset, cleans it using Polars, and uses an Agentic Loop (ReAct) to answer complex business questions, generate visualizations, and self-correct its own code if it hits an error.
 
-Built as a flagship project for the 2026 job market.
-
 ## App link
 https://abi-agent.streamlit.app/
 
